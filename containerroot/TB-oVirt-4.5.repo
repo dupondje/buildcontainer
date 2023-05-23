@@ -1,0 +1,5 @@
+[tb-ovirt45]
+name=TeamBlue $releasever - oVirt 4.5
+baseurl=http://5.134.0.228/$stream/oVirt/$basearch/
+gpgcheck=0
+enabled=1

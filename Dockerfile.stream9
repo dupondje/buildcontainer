@@ -30,6 +30,9 @@ RUN \
 
 COPY containerroot /
 
+# Add custom repository
+COPY containerroot/TB-oVirt-4.5.repo /etc/yum.repos.d/TB-oVirt-4.5.repo
+
 WORKDIR /tmp/src-rpm
 # Download source rpms and install it's dependencies
 RUN reposync --repoid=copr:copr.fedorainfracloud.org:ovirt:ovirt-master-snapshot --source --newest-only \
