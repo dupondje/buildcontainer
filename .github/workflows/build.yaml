@@ -1,6 +1,9 @@
 name: Build
 on:
   pull_request:
+  push:
+    branches:
+      - int-release
 jobs:
   build:
     name: Build
