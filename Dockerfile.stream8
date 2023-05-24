@@ -12,7 +12,8 @@ RUN dnf module enable -y \
     pki-deps \
     javapackages-tools \
     maven:3.6 \
-    nodejs:14
+    nodejs:14 \
+    python39
 
 # Add "build" user for optional non-root builds
 # Install required packages and the GitHub CLI tool so actions can use it when running in the container
@@ -55,8 +56,9 @@ WORKDIR /
 RUN dnf install -y \
     asciidoc \
     libvirt \
-    libguestfs-tools\
+    libguestfs-tools \
     lorax \
+    python39-pip \
     pykickstart \
     python3-jinja2 \
     python3-pyyaml \
