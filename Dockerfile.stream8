@@ -40,6 +40,15 @@ RUN reposync --repoid=copr:copr.fedorainfracloud.org:ovirt:ovirt-master-snapshot
     && \
     rm -rf *
 
+RUN reposync --repoid=tb-ovirt45 --source --newest-only \
+    && \
+    find . -iname '*.src.rpm' -exec mv {} . \; \
+    && \
+    dnf builddep -y *.src.rpm \
+    && \
+    rm -rf *
+
+
 WORKDIR /
 
 # Install missing dependencies for oVirt appliance and node
